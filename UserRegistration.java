@@ -7,15 +7,17 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		UserRegistration patternMatcher = new UserRegistration();
-		String sample1 = "Rohan";
-		System.out.println(sample1 + "----->" + patternMatcher.validateInput(sample1));
+		String firstName = "Rohan";
+		System.out.println(firstName + "----->" + patternMatcher.validateName(firstName));
+		String lastName = "Patil";
+		System.out.println(lastName + "----->" + patternMatcher.validateName(lastName));
 	}
 	
 	
-	private String validateInput(String sample) {
+	private String validateName(String check) {
 		String regex = "^([A-Z]{1}[A-Za-z]{2,})$";
 		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(sample);
+		Matcher matcher = pattern.matcher(check);
 		if(matcher.find()) {
 			return "valid";
 		}
