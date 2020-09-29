@@ -15,7 +15,7 @@ public class UserRegistration {
 		System.out.println(email + "----->" + patternMatcher.validateEmail(email));
 		String phone = "91 3265986532";
 		System.out.println(phone + "----->" + patternMatcher.validatePhone(phone));
-		String password = "rohanPatil#";
+		String password = "rohanPatil8#";
 		System.out.println(password + "----->" + patternMatcher.validatePassword(password));
 	}
 	
@@ -51,7 +51,7 @@ public class UserRegistration {
 	}
 	
 	private String validatePassword(String check) {
-		String regex = "^((?=.*[A-Z]+)([A-Za-z@#$%^&*]{8,}))$";
+		String regex = "^((?=.*[A-Z]+)(?=.*[0-9]+)([A-Za-z0-9@#$%^&*]{8,}))$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(check);
 		if(matcher.find()) {
