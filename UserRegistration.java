@@ -11,11 +11,11 @@ public class UserRegistration {
 		System.out.println(firstName + "----->" + patternMatcher.validateName(firstName));
 		String lastName = "Patil";
 		System.out.println(lastName + "----->" + patternMatcher.validateName(lastName));
-		String email = "abc.xyz@bl.co.ukkk";
+		String email = "abc+100@gmail8.com.au";
 		System.out.println(email + "----->" + patternMatcher.validateEmail(email));
 		String phone = "91 3265986532";
 		System.out.println(phone + "----->" + patternMatcher.validatePhone(phone));
-		String password = "roHan@$p0";
+		String password = "rohanPatil@0";
 		System.out.println(password + "----->" + patternMatcher.validatePassword(password));
 	}
 	
@@ -31,7 +31,7 @@ public class UserRegistration {
 	}
 	
 	private String validateEmail(String check) {
-		String regex = "^(abc[.][A-Za-z]+@bl[.]co[.][A-Za-z]{2,})$";
+		String regex = "^[a-zA-Z0-9_]+[-+.]?[A-Za-z0-9_]+@[A-Za-z0-9]+[.][a-z]{2,}[.]?([a-z]{2,})?$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(check);
 		if(matcher.find()) {
@@ -51,7 +51,7 @@ public class UserRegistration {
 	}
 	
 	private String validatePassword(String check) {
-		String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.?[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$";
+		String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(check);
 		if(matcher.find()) {
